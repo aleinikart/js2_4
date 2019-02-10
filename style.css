@@ -1,0 +1,104 @@
+main{
+    padding-bottom: 250px;
+}
+input {
+    width: 200px;
+    padding: 5px 10px;
+    margin: 10px 0 0;
+}
+input:focus{
+    outline: none;
+}
+button{
+    border: none;
+    background: rebeccapurple;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.error-msg{
+    color: red;
+    margin: 10px 0;
+}
+.invalid{
+    border: 2px solid red;
+}
+.valid{
+    border: 2px solid green;
+}
+
+.tabholder{
+    margin-bottom: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 800px;
+}
+.tabholder [data-tip]{
+    border: 1px solid #999;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.tabholder .tipholder{
+    display: flex;
+}
+.tabholder .tipholder .tip{
+    cursor: pointer;
+    border: 1px solid #999;
+    transition: all 0.3s ease;
+    color: #999;
+    padding: 15px;
+}
+.tabholder .tipholder .tip:hover,
+.tabholder .tipholder .tip:focus{
+    background-color: #999;
+    opacity: 0.7;
+    color: #fff;
+}
+.tabholder .tipholder .tip.cur{
+    background-color: #999;
+    opacity: 1;
+    color: #fff;
+}
+
+/*Autocomplete*/
+form{
+    max-width: 250px;
+}
+label{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+.cityblock.active{
+    box-shadow: 0 0 2px 2px #999;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+.cityblock.active .resultitem{
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.cityblock.active .resultitem:hover{
+    background-color: #c1c1c1;
+}
+.cityblock.active .resultitem:focus,
+.cityblock.active .resultitem:active{
+    background-color: #999;
+    color: #fff;
+}
+.cityblock.active .resultitem:last-of-type{
+    border-bottom: none;
+}
