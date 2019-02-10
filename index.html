@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+
+    <link href="style.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<main>
+    <div id="mytabholder" class="tabholder">
+        <div data-tip="tab1" data-name="Описание">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo quaerat rem soluta voluptatibus. A aperiam, assumenda aut consequuntur dolorem ea et, eum fuga harum, iste nihil suscipit vero voluptas! Alias aliquam assumenda dicta, dignissimos dolores earum maiores porro provident quasi qui recusandae suscipit veritatis. Assumenda autem facere ipsum magnam magni natus pariatur quae quis tempore unde? Doloribus perferendis, sint!</p>
+        </div>
+        <div data-tip="tab2" data-name="Характеристики">
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo quaerat rem soluta voluptatibus.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo quaerat rem soluta voluptatibus.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nemo quaerat rem soluta voluptatibus.</li>
+            </ul>
+        </div>
+        <div data-tip="tab3" data-name="Изображение">
+            <img src="owl.jpg" alt="Сипуха" width="300" height="225">
+        </div>
+    </div>
+
+    <form action="" class="some" id="myform">
+        <div>
+            <label>
+                Your name <br>
+                <input type="text" class="field" name="name" id="name">
+            </label>
+        </div>
+        <div>
+            <label>
+                Your phone <br>
+                <input type="tel" class="field" name="phone" id="phone">
+            </label>
+        </div>
+        <div>
+            <label>
+                Your email <br>
+                <input type="email" class="field" name="email" id="email">
+            </label>
+        </div>
+        <div>
+            <label>
+                Your city <br>
+                <input type="text" class="autocomplete" name="city" id="city" placeholder="Город не выбран">
+                <div class="cityblock">
+                </div>
+            </label>
+        </div>
+        <button id="val-btn">Submit</button>
+    </form>
+</main>
+<script src="jquery.js"></script>
+<script src="main.js"></script>
+
+<script>
+
+
+    $(document).ready(() => {
+        let ac = new Autocomplete('city');
+
+        $('#myform').on('submit', e => {
+            let valid = new Validator('myform');
+            if(!valid.valid){
+                e.preventDefault();
+            }
+        });
+
+        let tabs = new Tabs('mytabholder');
+    });
+</script>
+</body>
+</html>
